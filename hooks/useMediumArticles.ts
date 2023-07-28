@@ -1,0 +1,48 @@
+"use client"
+
+import { useCallback, useEffect, useState } from "react"
+
+import { MediumArticle } from "@/types/blog"
+
+interface MediumArticleProps {
+  author: string
+  categories: string[]
+  content: string
+  description: string
+  link: string
+  pubDate: string
+  thumbnail: string
+  title: string
+}
+
+const useMediumArticles = (): [
+  articles: MediumArticle[],
+  fetchArticles: () => Promise<void>
+] => {
+  const [articles, setArticles] = useState<MediumArticle[]>([])
+
+  const fetchArticles = useCallback(async () => {
+    const response = await fetch(
+      "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@0xpolarzero"
+    )
+
+    const data = await response.json()
+
+    setArticles(
+      data.items.map((item: MediumArticleProps) => ({
+        ...item,
+        type: "medium",
+        id: data.items.indexOf(item).toString(),
+        pubDate: new Date(item.pubDate),
+      }))
+    )
+  }, [])
+
+  useEffect(() => {
+    fetchArticles()
+  }, [fetchArticles])
+
+  return [articles, fetchArticles]
+}
+
+export default useMediumArticles
