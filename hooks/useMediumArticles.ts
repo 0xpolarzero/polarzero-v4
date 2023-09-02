@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react"
 
-import { MediumArticle } from "@/types/blog"
+import { MediumArticle, categories } from "@/types/blog"
 
 interface MediumArticleProps {
   author: string
@@ -34,6 +34,12 @@ const useMediumArticles = (): [
         type: "medium",
         id: data.items.indexOf(item).toString(),
         pubDate: new Date(item.pubDate),
+        // Filter out categories that are not relevant
+        categories: item.categories.filter((category) =>
+          categories.includes(category.toLowerCase())
+        ),
+        // Keep only the first paragraph of the description
+        description: item.description.split("<p>")[1].split("</p>")[0] + "..",
       }))
     )
   }, [])

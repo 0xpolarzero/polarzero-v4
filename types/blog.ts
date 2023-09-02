@@ -1,4 +1,15 @@
+export const categories = [
+  "chainlink",
+  "security",
+  "optimization",
+  "decentralized socials",
+  "nfts",
+  "infrastructure",
+]
+
 type Type = "twitter" | "medium"
+
+export type Category = (typeof categories)[number]
 
 export interface TwitterPost {
   type: Type
@@ -9,6 +20,7 @@ export interface TwitterPost {
   link: string
   pubDate: Date
   thumbnail: string
+  categories: Category[]
 }
 
 export interface MediumArticle {
@@ -21,5 +33,5 @@ export interface MediumArticle {
   link: string
   pubDate: Date
   thumbnail: string
-  categories: string[]
+  categories: Category[]
 }

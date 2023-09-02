@@ -1,6 +1,10 @@
 import {
+  Briefcase,
+  Code,
+  Home,
   LucideProps,
   Moon,
+  Newspaper,
   SunMedium,
   Twitter,
   type Icon as LucideIcon,
@@ -9,6 +13,10 @@ import {
 export type Icon = LucideIcon
 
 export const Icons = {
+  home: Home,
+  writing: Newspaper,
+  portfolio: Code,
+  hireMe: Briefcase,
   sun: SunMedium,
   moon: Moon,
   twitter: Twitter,

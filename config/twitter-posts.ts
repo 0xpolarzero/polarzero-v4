@@ -31,6 +31,7 @@ export const twitterPosts: TwitterPost[] = [
     link: "https://twitter.com/0xpolarzero/status/1682359325149261827",
     pubDate: new Date("2023-07-21T11:58:14.497Z"),
     thumbnail: "/thumbnails/tweet_why_you_should_use_chainlink.png",
+    categories: ["chainlink"],
   },
   {
     type: "twitter",
@@ -42,6 +43,7 @@ export const twitterPosts: TwitterPost[] = [
     link: "https://twitter.com/0xpolarzero/status/1681279109144494083",
     pubDate: new Date("2023-07-18T12:25:50.932Z"),
     thumbnail: "/thumbnails/tweet_chainlink_ccip.jpeg",
+    categories: ["chainlink"],
   },
   {
     type: "twitter",
@@ -56,6 +58,7 @@ export const twitterPosts: TwitterPost[] = [
       "The CEI / FREI-PI patterns",
       "Rolling code for preconditions & postconditions"
     ),
+    categories: ["security"],
   },
   {
     type: "twitter",
@@ -67,6 +70,7 @@ export const twitterPosts: TwitterPost[] = [
     link: "https://twitter.com/0xpolarzero/status/1679223918740078592",
     pubDate: new Date("2023-07-12T20:19:15.356Z"),
     thumbnail: "/thumbnails/tweet_rising_above_censorship.png",
+    categories: ["decentralized socials"],
   },
   {
     type: "twitter",
@@ -78,6 +82,7 @@ export const twitterPosts: TwitterPost[] = [
     link: "https://twitter.com/0xpolarzero/status/1678825999541186561",
     pubDate: new Date("2023-07-11T17:58:04.026Z"),
     thumbnail: "/thumbnails/tweet_nfts_are_dead.png",
+    categories: ["nfts"],
   },
   {
     type: "twitter",
@@ -89,6 +94,7 @@ export const twitterPosts: TwitterPost[] = [
     link: "https://twitter.com/0xpolarzero/status/1677996173297086464",
     pubDate: new Date("2023-07-09T11:00:38.032Z"),
     thumbnail: "/thumbnails/tweet_audit_reports.png",
+    categories: ["security"],
   },
   {
     type: "twitter",
@@ -103,6 +109,7 @@ export const twitterPosts: TwitterPost[] = [
       "NFTs?",
       "Marketing, communities, luxury brands..."
     ),
+    categories: ["nfts"],
   },
   {
     type: "twitter",
@@ -117,5 +124,6 @@ export const twitterPosts: TwitterPost[] = [
       "Building the infrastructure of Blockchain",
       "Or leveraging the existing one?"
     ),
+    categories: ["infrastructure"],
   },
 ]

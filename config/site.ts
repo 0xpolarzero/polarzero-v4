@@ -1,3 +1,7 @@
+import { BriefcaseIcon, CodeIcon, HomeIcon, NewspaperIcon } from "lucide-react"
+
+import { Icons } from "@/components/icons"
+
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
@@ -5,12 +9,24 @@ export const siteConfig = {
   description: "polazero's personal website, blog, and portfolio",
   mainNav: [
     {
-      title: "Blog",
-      href: "/blog",
+      title: "home",
+      href: "/",
+      icon: Icons.home,
     },
     {
-      title: "Work",
+      title: "writing",
+      href: "/blog",
+      icon: Icons.writing,
+    },
+    {
+      title: "portfolio",
       href: "/work",
+      icon: Icons.portfolio,
+    },
+    {
+      title: "hire me",
+      href: "/hire-me",
+      icon: Icons.hireMe,
     },
   ],
   links: {
