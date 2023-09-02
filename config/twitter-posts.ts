@@ -1,4 +1,4 @@
-import { TwitterPost } from "@/types/blog"
+import { TwitterPost } from "@/types/writing"
 
 // Get info (id, timestamp) of a tweet: https://oduwsdl.github.io/tweetedat/
 

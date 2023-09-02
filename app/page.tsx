@@ -49,7 +49,7 @@ export default function IndexPage() {
       </div>
       <div className="flex gap-4">
         <Link
-          href={siteConfig.links.blog}
+          href={siteConfig.links.writing}
           target="_blank"
           rel="noreferrer"
           className={buttonVariants()}

@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react"
 
-import { MediumArticle, categories } from "@/types/blog"
+import { MediumArticle, categories } from "@/types/writing"
 
 interface MediumArticleProps {
   author: string

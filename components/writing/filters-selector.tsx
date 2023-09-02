@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Check, ChevronsUpDown, Filter } from "lucide-react"
 
-import { Category, categories } from "@/types/blog"
+import { Category, categories } from "@/types/writing"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import {
