@@ -59,10 +59,10 @@ export default function IndexPage() {
         <Link
           target="_blank"
           rel="noreferrer"
-          href={siteConfig.links.work}
+          href={siteConfig.links.portfolio}
           className={buttonVariants({ variant: "outline" })}
         >
-          Work
+          Portfolio
         </Link>
       </div>
     </section>

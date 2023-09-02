@@ -20,7 +20,7 @@ export const siteConfig = {
     },
     {
       title: "portfolio",
-      href: "/work",
+      href: "/portfolio",
       icon: Icons.portfolio,
     },
     {
@@ -33,6 +33,6 @@ export const siteConfig = {
     twitter: "https://x.com/0xpolarzero",
     github: "https://github.com/0xpolarzero",
     writing: "/writing",
-    work: "/work",
+    portfolio: "/portfolio",
   },
 }
