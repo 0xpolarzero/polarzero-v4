@@ -16,7 +16,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import ElapsedTimeComponent from "@/components/ui/elapsed-time"
+import ElapsedTimeComponent from "@/components/elapsed-time"
 import { FiltersSelector } from "@/components/writing/filters-selector"
 
 export default function BlogPage() {

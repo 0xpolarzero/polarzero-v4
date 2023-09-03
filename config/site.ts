@@ -4,6 +4,13 @@ import { Icons } from "@/components/icons"
 
 export type SiteConfig = typeof siteConfig
 
+const links = {
+  twitter: "https://x.com/0xpolarzero",
+  github: "https://github.com/0xpolarzero",
+  writing: "/writing",
+  portfolio: "/portfolio",
+}
+
 export const siteConfig = {
   name: "polarzero",
   description: "polazero's personal website, blog, and portfolio",
@@ -29,10 +36,17 @@ export const siteConfig = {
       icon: Icons.hireMe,
     },
   ],
-  links: {
-    twitter: "https://x.com/0xpolarzero",
-    github: "https://github.com/0xpolarzero",
-    writing: "/writing",
-    portfolio: "/portfolio",
-  },
+  links,
+  sideNav: [
+    {
+      title: "Github",
+      href: links.github,
+      icon: Icons.gitHub,
+    },
+    {
+      title: "Twitter",
+      href: links.twitter,
+      icon: Icons.twitter,
+    },
+  ],
 }
