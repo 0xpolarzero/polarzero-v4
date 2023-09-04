@@ -48,7 +48,7 @@ export default function BlogPage() {
   }, [articles, filter])
 
   return (
-    <section className="container mx-auto flex flex-col space-y-2 p-4">
+    <section className="container mx-auto flex flex-col space-y-2 p-4 px-8">
       {/* A bento grids layout for the blog items */}
       <FiltersSelector
         blogItemsAmount={blogItems.length}
