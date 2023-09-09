@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 400 520" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Atmoky_Logo_onDark</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Atmoky_Logo_onDark" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Logo" transform="translate(20.000000, 32.000000)">
+            <g id="Pentatope" fill-rule="evenodd">
+                <polygon id="Triangle" fill="#f5f5f5" transform="translate(182.500000, 242.000000) scale(1, -1) translate(-182.500000, -242.000000) " points="167.9 0 365 372.307692 0 484"></polygon>
+                <polygon id="Triangle" fill="#CCCCCC" transform="translate(118.625000, 242.000000) scale(1, -1) translate(-118.625000, -242.000000) " points="167.9 0 237.25 377.892308 0 484"></polygon>
+                <polygon id="Triangle" fill="#999999" transform="translate(83.950000, 242.000000) scale(1, -1) translate(-83.950000, -242.000000) " points="156.95 251.307692 167.9 0 0 484"></polygon>
+                <polygon id="Triangle" fill="#666666" transform="translate(118.625000, 116.346154) scale(1, -1) translate(-118.625000, -116.346154) " points="156.95 -2.84217094e-14 237.25 126.584615 0 232.692308"></polygon>
+                <polygon id="Triangle" fill="#333333" transform="translate(182.500000, 55.846154) scale(1, -1) translate(-182.500000, -55.846154) " points="365 -6.71599528e-14 237.25 5.58461538 0 111.692308"></polygon>
+                <polygon id="Triangle" fill="#333333" transform="translate(260.975000, 297.846154) scale(1, -1) translate(-260.975000, -297.846154) " points="167.9 111.692308 365 484 156.95 363"></polygon>
+                <polygon id="Triangle" fill="#999" transform="translate(197.100000, 295.053846) scale(1, -1) translate(-197.100000, -295.053846) " points="167.9 106.107692 237.25 484 156.95 357.415385"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

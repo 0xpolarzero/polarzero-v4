@@ -110,7 +110,12 @@ export function SiteHeader() {
           {/* ---------------------------------- Large --------------------------------- */}
           <nav className="flex items-center space-x-1 md:hidden lg:flex">
             {siteConfig.sideNav.map((item, index) => (
-              <Link href={item.href} target="_blank" rel="noreferrer">
+              <Link
+                key={index}
+                href={item.href}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <div
                   className={buttonVariants({
                     size: "icon",

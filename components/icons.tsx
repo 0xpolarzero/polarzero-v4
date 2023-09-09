@@ -63,4 +63,15 @@ export const Icons = {
       ></path>
     </svg>
   ),
+  devpost: (props: LucideProps) => (
+    <svg viewBox="0 0 64 64" {...props}>
+      <g>
+        <path
+          fill="currentColor"
+          d="M32.2,16.9H21.4v30.3h10.8c8.2,0,14.9-6.8,14.9-15.1S40.5,16.9,32.2,16.9z M32,41.1h-4.5V22.9H32
+		c5,0,9.1,4.1,9.1,9.1S37,41.1,32,41.1z"
+        />
+      </g>
+    </svg>
+  ),
 }

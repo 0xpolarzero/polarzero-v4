@@ -1,9 +1,16 @@
+import { Icon } from "@/components/icons"
+
+export type TechItem = {
+  name: string
+  id: string
+  link: string
+}
+
 export type PortfolioItem = {
-  // type: "portfolio"
-  // id: string
-  // title: string
-  // subtitle: string | null
-  // description: string
-  // link: string
-  // pubDate: Date
+  title: string
+  description: React.ReactNode
+  context: React.ReactNode
+  links: { url: string; text: string; icon?: Icon }[]
+  tech: TechItem[]
+  date: Date
 }

@@ -7,6 +7,7 @@ export type SiteConfig = typeof siteConfig
 const links = {
   twitter: "https://x.com/0xpolarzero",
   github: "https://github.com/0xpolarzero",
+  email: "mailto:0xpolarzero@gmail.com",
   writing: "/writing",
   portfolio: "/portfolio",
 }
