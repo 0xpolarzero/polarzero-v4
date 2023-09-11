@@ -75,7 +75,7 @@ export const twitterPosts: TwitterPost[] = [
   {
     type: "twitter",
     id: "1678825999541186561",
-    title: "NFTs are dead",
+    title: "NFTs are dead (?)",
     subtitle: "For those who say that NFTs are dead",
     description:
       "About the true scope of NFTs and how they are not just about speculation, PFPs and identity.",
@@ -125,5 +125,20 @@ export const twitterPosts: TwitterPost[] = [
       "Or leveraging the existing one?"
     ),
     categories: ["infrastructure"],
+  },
+  {
+    type: "twitter",
+    id: "1522930572498145281",
+    title: 'NFTs and "mass adoption"',
+    subtitle: "Mass adoption, price and accessibility.",
+    description:
+      "A paradox in preaching for mass adoption and not addressing the issue of price and accessibility.",
+    link: "https://twitter.com/0xpolarzero/status/1522930572498145281",
+    pubDate: new Date("2022-05-07T13:25:17.822Z"),
+    thumbnail: getThumbnailFromTitle(
+      '"NFTs and "mass adoption"',
+      "Mass adoption, price and accessibility."
+    ),
+    categories: ["nfts"],
   },
 ]

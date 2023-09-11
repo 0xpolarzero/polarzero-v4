@@ -1,3 +1,5 @@
+import { ReactNode } from "react"
+
 export const categories = [
   "chainlink",
   "security",
@@ -5,9 +7,11 @@ export const categories = [
   "decentralized socials",
   "nfts",
   "infrastructure",
+  "metaverse",
+  "immersive technologies",
 ]
 
-type Type = "twitter" | "medium"
+type Type = "twitter" | "medium" | "hashnode" | "notion"
 
 export type Category = (typeof categories)[number]
 
@@ -28,10 +32,11 @@ export interface MediumArticle {
   id: string
   author: string
   title: string
-  description: string
-  content: HTMLElement
+  description: string | ReactNode
+  content?: HTMLElement | null
   link: string
+  pdf?: string
   pubDate: Date
-  thumbnail: string
+  thumbnail?: string
   categories: Category[]
 }

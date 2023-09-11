@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { ExternalLink, PlusIcon } from "lucide-react"
 
 import { Category, MediumArticle, TwitterPost } from "@/types/writing"
+import { otherPosts } from "@/config/other-articles"
 import { twitterPosts } from "@/config/twitter-posts"
 import useMediumArticles from "@/hooks/useMediumArticles"
 import { Badge } from "@/components/ui/badge"
@@ -21,14 +22,16 @@ import { FiltersSelector } from "@/components/writing/filters-selector"
 
 export default function BlogPage() {
   const [articles] = useMediumArticles()
-  const [blogItems, setBlogItems] =
-    useState<(TwitterPost | MediumArticle)[]>(twitterPosts)
+  const [blogItems, setBlogItems] = useState<(TwitterPost | MediumArticle)[]>([
+    ...twitterPosts,
+    ...otherPosts,
+  ])
   const [filter, setFilter] = useState<Category | null>(null)
 
   useEffect(() => {
     if (articles) {
       setBlogItems(
-        [...twitterPosts, ...articles].sort(
+        [...twitterPosts, ...otherPosts, ...articles].sort(
           (a, b) => b.pubDate.getTime() - a.pubDate.getTime()
         )
       )
@@ -36,7 +39,7 @@ export default function BlogPage() {
   }, [articles])
 
   useEffect(() => {
-    const items = [...twitterPosts, ...articles].sort(
+    const items = [...twitterPosts, ...otherPosts, ...articles].sort(
       (a, b) => b.pubDate.getTime() - a.pubDate.getTime()
     )
 
@@ -66,7 +69,7 @@ export default function BlogPage() {
               {item.categories.map((category) => (
                 <Badge
                   variant="secondary"
-                  className="cursor-pointer"
+                  className="cursor-pointer whitespace-nowrap"
                   key={category}
                   onClick={() => setFilter(category)}
                 >
