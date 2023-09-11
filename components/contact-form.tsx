@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { useToast } from "@/components/ui/use-toast"
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -55,10 +56,10 @@ export function ContactForm() {
     },
   })
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
+  const { toast } = useToast()
 
-    const res = await fetch("/api/contact", {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    const res = await fetch("/api/hire-me", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -66,18 +67,25 @@ export function ContactForm() {
       body: JSON.stringify(values),
     })
 
-    const { success, error } = await res.json()
-
-    if (success) {
+    if (res.status === 200) {
       form.reset()
-      alert("Message sent!")
+      toast({
+        title: "Message sent!",
+        description: "I'll get back to you as soon as possible.",
+        duration: 0,
+      })
     } else {
-      alert(error)
+      console.error(await res.json())
+      toast({
+        title: "Error!",
+        description: "Something went wrong. Please try again later.",
+        duration: 0,
+      })
     }
   }
 
   return (
-    <div className="flex max-w-[900px] flex-col space-y-2">
+    <div className="flex max-w-[900px] flex-col space-y-2 rounded bg-white/10 p-4 drop-shadow-lg backdrop-blur-xl">
       <h1 className="text-2xl font-bold leading-tight tracking-tighter md:text-3xl">
         Contact me
       </h1>

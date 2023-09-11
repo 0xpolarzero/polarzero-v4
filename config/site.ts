@@ -15,6 +15,7 @@ const links = {
 export const siteConfig = {
   name: "polarzero",
   description: "polazero's personal website, blog, and portfolio",
+  email: "contact@polarzero.xyz",
   mainNav: [
     {
       title: "home",

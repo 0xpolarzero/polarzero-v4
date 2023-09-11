@@ -7,15 +7,15 @@ type EmailData = string | { name?: string; email: string }
 
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY || "")
 
-async function sendEmail(req: Request) {
-  console.log("yes")
+export async function POST(req: Request) {
   try {
-    const formData = await req.formData()
+    const formData = await req.json()
+    console.log(siteConfig.links.email.split(":")[1])
 
     await sendgrid.send({
-      to: siteConfig.links.email,
-      from: formData.get("email") as EmailData,
-      subject: `🚩 Lead from polarzero.xyz: ${formData.get("subject")}`,
+      to: siteConfig.email,
+      from: siteConfig.email,
+      subject: `🚩 Lead from polarzero.xyz: ${formData.subject}`,
       html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
       <html lang="en">
         <head>
@@ -28,28 +28,28 @@ async function sendEmail(req: Request) {
         </head>
       
         <body>
-          <h2>New mail from ${formData.get("name")}.</h2>
+          <h2>New mail from ${formData.name}.</h2>
           <h3>Subject:</h3>
-          <p>${formData.get("subject")}</p>
+          <p>${formData.subject}</p>
           <h3>Email:</h3>
-          <p>${formData.get("email")}</p>
+          <p>${formData.email}</p>
           <h3>Company:</h3>
-          <p>${formData.get("company")}</p>
+          <p>${formData.company}</p>
           <h3>Twitter/X:</h3>
-          <p>${formData.get("twitter")}</p>
+          <p>${formData.twitter}</p>
           <h3>Timeline:</h3>
-          <p>${formData.get("timeline")}</p>
+          <p>${formData.timeline}</p>
           <h3>Message:</h3>
-          <p>${formData.get("message")}</p>
+          <p>${formData.message}</p>
         </body>
       </html>`,
     })
 
-    return new Response("Email sent", { status: 200 })
+    return new Response(JSON.stringify("Email sent"), { status: 200 })
   } catch (err) {
     console.log(err)
-    return new Response("Error sending email", { status: 500 })
+    return new Response(JSON.stringify(`Error sending email: ${err}`), {
+      status: 500,
+    })
   }
 }
-
-export default sendEmail
