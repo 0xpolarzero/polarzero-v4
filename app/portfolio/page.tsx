@@ -46,7 +46,10 @@ export default function PortfolioPage() {
           className="grid grid-cols-1 gap-4 xl:grid-cols-2"
         >
           {portfolioDev.map((item: PortfolioItem, index) => (
-            <Card key={index} className="flex flex-col justify-between">
+            <Card
+              key={index}
+              className="flex flex-col justify-between rounded-md bg-white/0 bg-clip-padding backdrop-blur-sm transition-all duration-100 hover:backdrop-blur-md"
+            >
               <CardHeader>
                 <CardTitle>{item.title}</CardTitle>
                 <CardDescription className="text-justify text-base">

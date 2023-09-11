@@ -1,20 +1,22 @@
 "use client"
 
 import { useEffect, useMemo, useRef } from "react"
-import { useFrame } from "@react-three/fiber"
+import { usePathname } from "next/navigation"
+import { useFrame, useThree } from "@react-three/fiber"
 import { useTheme } from "next-themes"
 import * as THREE from "three"
 
 import { EntityType, EntityUniform } from "@/types/canvas"
+import { pathnameToEntityType } from "@/config/entity-type"
 
 import fragmentShader from "./shaders/fragmentShader"
 import vertexShaders from "./shaders/vertexShaders"
 
-const Entity = ({ type }: { type: EntityType }) => {
+const Entity = () => {
   const { resolvedTheme: theme } = useTheme()
+  const type: EntityType = pathnameToEntityType[usePathname()]
   const ref = useRef<THREE.Points | null>(null)
-
-  const vertexShader = vertexShaders[type]
+  const { viewport } = useThree()
 
   const count: number = 1000
   const radius: number = 2
@@ -75,7 +77,19 @@ const Entity = ({ type }: { type: EntityType }) => {
 
     // Time
     shaderMaterial.uniforms.uTime.value = clock.getElapsedTime()
+
+    // Placement
+    ref.current.position.x =
+      type === "home" || type === "hire-me" ? viewport.width / 4 : 0
   })
+
+  useEffect(() => {
+    if (!ref.current || !type) return
+
+    const shaderMaterial = ref.current.material as THREE.ShaderMaterial
+    shaderMaterial.vertexShader = vertexShaders[type]
+    shaderMaterial.needsUpdate = true
+  }, [type])
 
   useEffect(() => {
     if (!ref.current || !theme || (theme !== "dark" && theme !== "light"))
@@ -103,7 +117,7 @@ const Entity = ({ type }: { type: EntityType }) => {
       <shaderMaterial
         blending={THREE.AdditiveBlending}
         depthWrite={false}
-        vertexShader={vertexShader}
+        vertexShader={vertexShaders["home"]}
         fragmentShader={fragmentShader}
         uniforms={uniforms}
       />

@@ -14,7 +14,7 @@ export default function Scene({ children, ...props }: { children: ReactNode }) {
         {...props}
         className="pointer-events-none"
         style={{
-          position: "absolute",
+          position: "fixed",
           top: 0,
           left: 0,
           zIndex: -1,

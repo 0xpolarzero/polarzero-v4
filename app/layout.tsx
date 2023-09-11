@@ -49,7 +49,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               <div className="flex-1">{children}</div>
 
               <Scene>
-                <Entity type="home" />
+                <Entity />
               </Scene>
             </div>
             <Toaster />

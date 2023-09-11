@@ -6,6 +6,7 @@ const vertexShaders = {
   home: vertexShaderHome,
   portfolio: vertexShaderPortfolio,
   writing: vertexShaderWriting,
+  "hire-me": vertexShaderHome,
 }
 
 export default vertexShaders

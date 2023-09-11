@@ -1,6 +1,6 @@
 import * as THREE from "three"
 
-export type EntityType = "home" | "portfolio" | "writing"
+export type EntityType = "home" | "portfolio" | "writing" | "hire-me"
 
 export type EntityUniform = {
   uTime: {

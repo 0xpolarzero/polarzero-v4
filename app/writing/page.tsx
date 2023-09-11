@@ -18,7 +18,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import ElapsedTimeComponent from "@/components/elapsed-time"
-import { FiltersSelector } from "@/components/writing/filters-selector"
+import { FiltersSelector } from "@/components/filters-selector"
 
 export default function BlogPage() {
   const [articles] = useMediumArticles()
@@ -60,7 +60,10 @@ export default function BlogPage() {
       />
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {blogItems.map((item) => (
-          <Card key={item.link} className="flex flex-col justify-between">
+          <Card
+            key={item.link}
+            className="flex flex-col justify-between rounded-md bg-white/0 bg-clip-padding backdrop-blur-sm transition-all duration-100 hover:backdrop-blur-md"
+          >
             <CardHeader>
               <CardTitle>{item.title}</CardTitle>
               <CardDescription>{item.description}</CardDescription>

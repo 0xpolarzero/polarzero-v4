@@ -85,7 +85,7 @@ export function ContactForm() {
   }
 
   return (
-    <div className="flex max-w-[900px] flex-col space-y-2 rounded bg-white/10 p-4 drop-shadow-lg backdrop-blur-xl">
+    <div className="flex max-w-[900px] flex-col space-y-2 rounded-md bg-clip-padding p-4 backdrop-blur-sm transition-all duration-100 hover:backdrop-blur-md">
       <h1 className="text-2xl font-bold leading-tight tracking-tighter md:text-3xl">
         Contact me
       </h1>
