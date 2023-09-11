@@ -17,11 +17,11 @@ export const siteConfig = {
   description: "polazero's personal website, blog, and portfolio",
   email: "contact@polarzero.xyz",
   mainNav: [
-    {
-      title: "home",
-      href: "/",
-      icon: Icons.home,
-    },
+    // {
+    //   title: "home",
+    //   href: "/",
+    //   icon: Icons.home,
+    // },
     {
       title: "writing",
       href: "/writing",

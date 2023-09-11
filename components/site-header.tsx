@@ -2,6 +2,7 @@
 
 import React from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { LinkIcon, Menu, PanelLeftOpen } from "lucide-react"
 
 import { NavItem } from "@/types/nav"
@@ -9,19 +10,8 @@ import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import {
   Sheet,
-  SheetClose,
   SheetContent,
-  SheetDescription,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -30,6 +20,8 @@ import { Icons } from "@/components/icons"
 import { ThemeToggle } from "@/components/theme-toggle"
 
 export function SiteHeader() {
+  const pathname = usePathname()
+
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background">
       <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
@@ -40,13 +32,13 @@ export function SiteHeader() {
           /* -------------------------------------------------------------------------- */}
           <Link href="/" className="hidden items-center space-x-2 md:flex">
             <Icons.logo className="h-6 w-6" />
-            <span className="hidden font-bold lg:inline-block">
+            <span className="hidden pr-8 font-bold lg:inline-block">
               {siteConfig.name}
             </span>
           </Link>
           {siteConfig.mainNav?.length ? (
             <>
-              <nav className="hidden gap-4 md:flex lg:gap-6">
+              <nav className="lg:gap-18 hidden gap-12 md:flex">
                 {siteConfig.mainNav?.map((item: NavItem, index) =>
                   item.href ? (
                     <React.Fragment key={index}>
@@ -57,11 +49,11 @@ export function SiteHeader() {
                           item.disabled && "cursor-not-allowed opacity-80"
                         )}
                       >
-                        <item.icon className="mr-4 h-4 w-4" />
-                        {item.title}
+                        {/* <item.icon className="mr-4 h-4 w-4" /> */}
+                        {`${pathname === item.href ? "_" : ""}${item.title}`}
                       </Link>
                       {index < siteConfig.mainNav.length - 1 ? (
-                        <span className="opacity-30">|</span>
+                        <span className="opacity-10">|</span>
                       ) : null}
                     </React.Fragment>
                   ) : null
@@ -108,7 +100,8 @@ export function SiteHeader() {
         /* -------------------------------------------------------------------------- */}
         <div className="flex flex-1 items-center justify-end space-x-4">
           {/* ---------------------------------- Large --------------------------------- */}
-          <nav className="flex items-center space-x-1 md:hidden lg:flex">
+          {/* <nav className="flex items-center space-x-1 md:hidden lg:flex"> */}
+          <nav className="flex items-center space-x-1">
             {siteConfig.sideNav.map((item, index) => (
               <Link
                 key={index}
@@ -130,7 +123,7 @@ export function SiteHeader() {
             <ThemeToggle />
           </nav>
           {/* ---------------------------------- Small --------------------------------- */}
-          <nav className="hidden md:flex lg:hidden">
+          {/* <nav className="hidden md:flex lg:hidden">
             <DropdownMenu>
               <DropdownMenuTrigger>
                 <button
@@ -157,7 +150,7 @@ export function SiteHeader() {
               </DropdownMenuContent>
             </DropdownMenu>
             <ThemeToggle />
-          </nav>
+          </nav> */}
         </div>
       </div>
     </header>
