@@ -59,8 +59,22 @@ const Entity = () => {
       uRadius: {
         value: radius,
       },
-      uColorA: new THREE.Uniform(new THREE.Vector3(...colors["dark"][0])),
-      uColorB: new THREE.Uniform(new THREE.Vector3(...colors["dark"][1])),
+      // spread it manually just for the compiler...
+      uColorA: new THREE.Uniform(
+        new THREE.Vector3(
+          colors["dark"][0][0],
+          colors["dark"][0][1],
+          colors["dark"][0][2]
+        )
+      ),
+      uColorB: new THREE.Uniform(
+        new THREE.Vector3(
+          colors["dark"][1][0],
+          colors["dark"][1][1],
+          colors["dark"][1][2]
+        )
+      ),
+
       uGain: {
         value: 1.0,
       },
