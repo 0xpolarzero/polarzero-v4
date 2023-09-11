@@ -7,10 +7,9 @@ import {
   Newspaper,
   SunMedium,
   Twitter,
-  type Icon as LucideIcon,
 } from "lucide-react"
 
-export type Icon = LucideIcon
+export type Icon = typeof Home
 
 export const Icons = {
   home: Home,

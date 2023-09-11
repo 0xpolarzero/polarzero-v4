@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { ExternalLink, PlusIcon } from "lucide-react"
+import { ExternalLink } from "lucide-react"
 
 import { Category, MediumArticle, TwitterPost } from "@/types/writing"
 import { otherPosts } from "@/config/other-articles"

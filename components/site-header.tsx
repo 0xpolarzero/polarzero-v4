@@ -3,7 +3,7 @@
 import React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { LinkIcon, Menu, PanelLeftOpen } from "lucide-react"
+import { Menu } from "lucide-react"
 
 import { NavItem } from "@/types/nav"
 import { siteConfig } from "@/config/site"

@@ -2,9 +2,6 @@ import sendgrid from "@sendgrid/mail"
 
 import { siteConfig } from "@/config/site"
 
-// From SendGrid files
-type EmailData = string | { name?: string; email: string }
-
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY || "")
 
 export async function POST(req: Request) {

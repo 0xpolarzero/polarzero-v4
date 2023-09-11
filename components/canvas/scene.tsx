@@ -3,11 +3,8 @@
 import { ReactNode, Suspense } from "react"
 import { Preload } from "@react-three/drei"
 import { Canvas } from "@react-three/fiber"
-import { useTheme } from "next-themes"
 
 export default function Scene({ children, ...props }: { children: ReactNode }) {
-  const { resolvedTheme: theme } = useTheme()
-
   return (
     <Suspense fallback={null}>
       <Canvas

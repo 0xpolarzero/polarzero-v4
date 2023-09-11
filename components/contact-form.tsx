@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -100,7 +99,6 @@ export function ContactForm() {
                 <FormControl>
                   <Input placeholder="Your name or pseudonym" {...field} />
                 </FormControl>
-                {/* <FormDescription>Your name or pseudonym.</FormDescription> */}
                 <FormMessage />
               </FormItem>
             )}
@@ -114,7 +112,6 @@ export function ContactForm() {
                 <FormControl>
                   <Input placeholder="Your email address" {...field} />
                 </FormControl>
-                {/* <FormDescription>Your email address.</FormDescription> */}
                 <FormMessage />
               </FormItem>
             )}
@@ -128,7 +125,6 @@ export function ContactForm() {
                 <FormControl>
                   <Input placeholder="The subject of your message" {...field} />
                 </FormControl>
-                {/* <FormDescription>Subject of your message.</FormDescription> */}
                 <FormMessage />
               </FormItem>
             )}
@@ -142,7 +138,6 @@ export function ContactForm() {
                 <FormControl>
                   <Input placeholder="An estimated timeline" {...field} />
                 </FormControl>
-                {/* <FormDescription>Your timeline.</FormDescription> */}
                 <FormMessage />
               </FormItem>
             )}
@@ -156,7 +151,6 @@ export function ContactForm() {
                 <FormControl>
                   <Input placeholder="Your company name" {...field} />
                 </FormControl>
-                {/* <FormDescription>Your company name.</FormDescription> */}
                 <FormMessage />
               </FormItem>
             )}
@@ -170,7 +164,6 @@ export function ContactForm() {
                 <FormControl>
                   <Input placeholder="Your Twitter/X username" {...field} />
                 </FormControl>
-                {/* <FormDescription>Your twitter handle.</FormDescription> */}
                 <FormMessage />
               </FormItem>
             )}
@@ -188,7 +181,6 @@ export function ContactForm() {
                     {...field}
                   />
                 </FormControl>
-                {/* <FormDescription>Your message.</FormDescription> */}
                 <FormMessage />
               </FormItem>
             )}
