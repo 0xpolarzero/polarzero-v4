@@ -31,7 +31,7 @@ export function SiteHeader() {
           /*                                  Main nav                                  */
           /* -------------------------------------------------------------------------- */}
           <Link href="/" className="hidden items-center space-x-2 md:flex">
-            {Icons.logo({ className: "h-6 w-6" })}
+            {Icons.logo({ className: "h-6 w-6" }) as JSX.Element}
             <span className="hidden pr-8 font-bold lg:inline-block">
               {siteConfig.name}
             </span>
@@ -115,7 +115,11 @@ export function SiteHeader() {
                     variant: "ghost",
                   })}
                 >
-                  {item.icon({ className: "h-5 w-5 fill-current" })}
+                  {
+                    item.icon({
+                      className: "h-5 w-5 fill-current",
+                    }) as JSX.Element
+                  }
                   <span className="sr-only">{item.title}</span>
                 </div>
               </Link>
