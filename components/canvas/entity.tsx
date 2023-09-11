@@ -111,10 +111,14 @@ const Entity = () => {
     const shaderMaterial = ref.current.material as THREE.ShaderMaterial
 
     shaderMaterial.uniforms.uColorA.value = new THREE.Vector3(
-      ...colors[theme][0]
+      colors[theme][0][0],
+      colors[theme][0][1],
+      colors[theme][0][2]
     )
     shaderMaterial.uniforms.uColorB.value = new THREE.Vector3(
-      ...colors[theme][1]
+      colors[theme][1][0],
+      colors[theme][1][1],
+      colors[theme][1][2]
     )
   }, [theme, colors])
 
