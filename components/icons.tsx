@@ -13,13 +13,13 @@ import {
 export type Icon = (props: LucideProps) => ReactNode | JSX.Element
 
 export const Icons: Record<string, Icon> = {
-  home: (props: LucideProps) => <Home />,
-  writing: (props: LucideProps) => <Newspaper />,
-  portfolio: (props: LucideProps) => <Code />,
-  hireMe: (props: LucideProps) => <Briefcase />,
-  sun: (props: LucideProps) => <SunMedium />,
-  moon: (props: LucideProps) => <Moon />,
-  twitter: (props: LucideProps) => <Twitter />,
+  home: (props: LucideProps) => <Home {...props} />,
+  writing: (props: LucideProps) => <Newspaper {...props} />,
+  portfolio: (props: LucideProps) => <Code {...props} />,
+  hireMe: (props: LucideProps) => <Briefcase {...props} />,
+  sun: (props: LucideProps) => <SunMedium {...props} />,
+  moon: (props: LucideProps) => <Moon {...props} />,
+  twitter: (props: LucideProps) => <Twitter {...props} />,
   logo: (props: LucideProps) => (
     <svg
       version="1.0"

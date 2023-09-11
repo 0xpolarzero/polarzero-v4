@@ -1,5 +1,5 @@
 import React from "react"
-import { Github, Youtube } from "lucide-react"
+import { Github, LucideProps, Youtube } from "lucide-react"
 
 import { PortfolioItem } from "@/types/portfolio"
 import { Icons } from "@/components/icons"
@@ -26,12 +26,12 @@ export const portfolioDev: PortfolioItem[] = [
       {
         url: "https://github.com/0xpolarzero/decentralized-autonomous-crownfunding/",
         text: "Github",
-        icon: Github,
+        icon: (props: LucideProps) => <Github {...props} />,
       },
       {
         url: "https://youtu.be/4tHtIcdVorY?si=hkrK7w3Tdl_MXGTD",
         text: "Demo",
-        icon: Youtube,
+        icon: (props: LucideProps) => <Youtube {...props} />,
       },
       {
         url: "https://devpost.com/software/cascade-u14fdb",
@@ -81,12 +81,12 @@ export const portfolioDev: PortfolioItem[] = [
       {
         url: "https://github.com/0xpolarzero/cross-chain-ERC20-balance-verification",
         text: "Github",
-        icon: Github,
+        icon: (props: LucideProps) => <Github {...props} />,
       },
       {
         url: "https://youtu.be/N5jvHRSJVME?si=LgX-puJ3AUijDXtX",
         text: "Demo",
-        icon: Youtube,
+        icon: (props: LucideProps) => <Youtube {...props} />,
       },
     ],
     tech: [
@@ -124,12 +124,12 @@ export const portfolioDev: PortfolioItem[] = [
       {
         url: "https://github.com/0xpolarzero/chainlink-fall-2022-hackathon",
         text: "Github",
-        icon: Github,
+        icon: (props: LucideProps) => <Github {...props} />,
       },
       {
         url: "https://youtu.be/6TQf_QUu8K8?si=rCG1Z8Dt8F_ujfTV",
         text: "Demo",
-        icon: Youtube,
+        icon: (props: LucideProps) => <Youtube {...props} />,
       },
       {
         url: "https://devpost.com/software/promise-erftax",
