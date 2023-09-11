@@ -84,7 +84,7 @@ export default function PortfolioPage() {
                       onClick={() => window.open(link.url, "_blank")}
                     >
                       {link.icon ? (
-                        <link.icon className="mr-2 h-4 w-4" />
+                        link.icon({ className: "mr-2 h-4 w-4" })
                       ) : (
                         <ExternalLink className="mr-2 h-4 w-4" />
                       )}

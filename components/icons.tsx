@@ -1,3 +1,4 @@
+import { ReactNode } from "react"
 import {
   Briefcase,
   Code,
@@ -9,9 +10,9 @@ import {
   Twitter,
 } from "lucide-react"
 
-export type Icon = typeof Home
+export type Icon = (props: LucideProps) => ReactNode
 
-export const Icons = {
+export const Icons: Record<string, Icon> = {
   home: Home,
   writing: Newspaper,
   portfolio: Code,

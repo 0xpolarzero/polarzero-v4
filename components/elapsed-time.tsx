@@ -7,7 +7,7 @@ interface ElapsedTimeComponentProps {
 const ElapsedTimeComponent: React.FC<ElapsedTimeComponentProps> = ({
   timestamp,
 }) => {
-  if (!timestamp) return "unknown date"
+  if (!timestamp) return <span>unknown date</span>
 
   timestamp = Number(timestamp)
 
