@@ -22,6 +22,7 @@ export interface TwitterPost {
   subtitle: string | null
   description: string
   link: string
+  pdf?: string
   pubDate: Date
   thumbnail: string
   categories: Category[]

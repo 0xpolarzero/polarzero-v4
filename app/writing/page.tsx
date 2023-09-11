@@ -83,15 +83,21 @@ export default function BlogPage() {
                 <ElapsedTimeComponent timestamp={item.pubDate.getTime()} />)
               </p>
               <Button
-                // variant="link"
-                // Make sure it doesn't stretch to fill the width
-                // className="flex w-full flex-row items-center justify-start whitespace-nowrap p-0"
                 className="w-full"
                 onClick={() => window.open(item.link, "_blank")}
               >
                 <ExternalLink className="mr-2 h-4 w-4" />
                 Read on {item.type.charAt(0).toUpperCase() + item.type.slice(1)}
               </Button>
+              {item.pdf ? (
+                <Button
+                  className="w-full"
+                  onClick={() => window.open(item.pdf, "_blank")}
+                >
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  Read PDF
+                </Button>
+              ) : null}
             </CardFooter>
           </Card>
         ))}
