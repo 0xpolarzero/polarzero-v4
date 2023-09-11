@@ -50,17 +50,10 @@ export default function IndexPage() {
         </p>
       </div>
       <div className="flex gap-4">
-        <Link
-          href={siteConfig.links.writing}
-          target="_blank"
-          rel="noreferrer"
-          className={buttonVariants()}
-        >
+        <Link href={siteConfig.links.writing} className={buttonVariants()}>
           Writing
         </Link>
         <Link
-          target="_blank"
-          rel="noreferrer"
           href={siteConfig.links.portfolio}
           className={buttonVariants({ variant: "outline" })}
         >
