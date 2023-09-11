@@ -10,16 +10,16 @@ import {
   Twitter,
 } from "lucide-react"
 
-export type Icon = (props: LucideProps) => ReactNode
+export type Icon = (props: LucideProps) => ReactNode | JSX.Element
 
 export const Icons: Record<string, Icon> = {
-  home: Home,
-  writing: Newspaper,
-  portfolio: Code,
-  hireMe: Briefcase,
-  sun: SunMedium,
-  moon: Moon,
-  twitter: Twitter,
+  home: (props: LucideProps) => <Home />,
+  writing: (props: LucideProps) => <Newspaper />,
+  portfolio: (props: LucideProps) => <Code />,
+  hireMe: (props: LucideProps) => <Briefcase />,
+  sun: (props: LucideProps) => <SunMedium />,
+  moon: (props: LucideProps) => <Moon />,
+  twitter: (props: LucideProps) => <Twitter />,
   logo: (props: LucideProps) => (
     <svg
       version="1.0"
