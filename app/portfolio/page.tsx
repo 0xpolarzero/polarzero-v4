@@ -31,14 +31,16 @@ export default function PortfolioPage() {
 
   return (
     <section className="container mx-auto flex flex-col space-y-2 p-4 px-8">
-      <Tabs defaultValue="audits" className="w-full">
+      <Tabs defaultValue="development" className="w-full">
         <TabsList className="grid w-full grid-cols-2">
           <TabsTrigger value="audits">Security audits</TabsTrigger>
           <TabsTrigger value="development">
             Smart contracts development
           </TabsTrigger>
         </TabsList>
-        <TabsContent value="audits">ok</TabsContent>
+        <TabsContent value="audits">
+          No security audits yet. Stay tuned!
+        </TabsContent>
         <TabsContent
           value="development"
           className="grid grid-cols-1 gap-4 xl:grid-cols-2"
