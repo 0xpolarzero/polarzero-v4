@@ -6,7 +6,7 @@ import { ExternalLink } from "lucide-react"
 import { Category, MediumArticle, TwitterPost } from "@/types/writing"
 import { otherPosts } from "@/config/other-articles"
 import { twitterPosts } from "@/config/twitter-posts"
-import useMediumArticles from "@/hooks/useMediumArticles"
+import useMediumArticles from "@/hooks/use-medium-articles"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
