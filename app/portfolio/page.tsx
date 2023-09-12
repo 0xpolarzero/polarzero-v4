@@ -77,7 +77,7 @@ export default function PortfolioPage() {
                   (
                   <ElapsedTimeComponent timestamp={item.date.getTime()} />)
                 </p>
-                <div className="flex items-center space-x-2">
+                <div className="flex flex-wrap items-center gap-2">
                   {item.links.map((link) => (
                     <Button
                       key={link.url}
