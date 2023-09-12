@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react"
+import React, { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu } from "lucide-react"
@@ -21,6 +21,7 @@ import { ThemeToggle } from "@/components/theme-toggle"
 
 export function SiteHeader() {
   const pathname = usePathname()
+  const [sheetOpen, setSheetOpen] = useState(false)
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background">
@@ -61,19 +62,25 @@ export function SiteHeader() {
               </nav>
               {/* ---------------------------------- Small --------------------------------- */}
               <nav className="md:hidden">
-                <Sheet>
+                <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
                   <SheetTrigger asChild>
                     <button
                       className={buttonVariants({
                         size: "icon",
                         variant: "ghost",
                       })}
+                      onClick={() => setSheetOpen(true)}
                     >
                       <Menu className="h-5 w-5" />
                       <span className="sr-only">Open menu</span>
                     </button>
                   </SheetTrigger>
-                  <SheetContent side="left" className="flex flex-col">
+                  <SheetContent
+                    side="left"
+                    className="flex flex-col"
+                    onPointerDownOutside={() => setSheetOpen(false)}
+                    onInteractOutside={() => setSheetOpen(false)}
+                  >
                     <SheetHeader>
                       <SheetTitle>polarzero</SheetTitle>
                     </SheetHeader>
@@ -83,6 +90,7 @@ export function SiteHeader() {
                           key={index}
                           href={item.href}
                           className="flex items-center"
+                          onClick={() => setSheetOpen(false)}
                         >
                           {/* <item.icon className="mr-4 h-4 w-4" /> */}
                           {item.title}
