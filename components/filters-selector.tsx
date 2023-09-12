@@ -5,6 +5,7 @@ import { Check, ChevronsUpDown, Filter } from "lucide-react"
 
 import { Category, categories } from "@/types/writing"
 import { cn } from "@/lib/utils"
+import useWindowSize from "@/hooks/window-size"
 import { Button } from "@/components/ui/button"
 import {
   Command,
@@ -22,7 +23,6 @@ import {
 const categoriesFormatted = categories.sort().map((category) => ({
   value: category,
   label: category,
-  //   .charAt(0).toUpperCase() + category.slice(1),
 }))
 
 interface FiltersSelectorProps {
@@ -37,18 +37,23 @@ export function FiltersSelector({
   setFilter,
 }: FiltersSelectorProps) {
   const [open, setOpen] = React.useState<boolean>(false)
-  const [value, setValue] = React.useState<string>("")
+  const { width } = useWindowSize()
+  console.log(width)
 
   return (
-    <div className="flex items-center justify-between space-x-4">
-      <div className="flex items-center space-x-4">
+    <div
+      className={`flex items-center justify-between space-x-4 ${
+        width > 500 ? "flex-row" : "flex-col gap-2"
+      }`}
+    >
+      <div className="flex w-full items-center space-x-4">
         <Popover open={open} onOpenChange={setOpen}>
           <PopoverTrigger asChild>
             <Button
               variant="outline"
               role="combobox"
               aria-expanded={open}
-              className="w-[300px] justify-between whitespace-nowrap"
+              className="w-full justify-between whitespace-nowrap"
             >
               <Filter className="mr-2 h-4 w-4" />
               {filter ? (
@@ -90,7 +95,11 @@ export function FiltersSelector({
         <span className="text-gray-500">({blogItemsAmount})</span>
       </div>
       {filter ? (
-        <Button variant="outline" onClick={() => setFilter(null)}>
+        <Button
+          className={width > 500 ? "w-auto" : "w-full"}
+          variant="outline"
+          onClick={() => setFilter(null)}
+        >
           Clear
         </Button>
       ) : null}
