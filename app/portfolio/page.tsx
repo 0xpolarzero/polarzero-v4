@@ -31,7 +31,7 @@ export default function PortfolioPage() {
   return (
     <section className="container mx-auto flex flex-col space-y-2 p-4 px-8">
       <Tabs defaultValue="development" className="w-full">
-        <TabsList className="grid w-full grid-cols-2">
+        <TabsList className="mb-10 grid w-full grid-cols-1 md:mb-0 md:grid-cols-2">
           <TabsTrigger value="audits">Security audits</TabsTrigger>
           <TabsTrigger value="development">
             Smart contracts development
