@@ -36,6 +36,8 @@ export async function POST(req: Request) {
           <p>${formData.twitter}</p>
           <h3>Timeline:</h3>
           <p>${formData.timeline}</p>
+          <h3>Budget:</h3>
+          <p>${formData.budget}</p>
           <h3>Message:</h3>
           <p>${formData.message}</p>
         </body>

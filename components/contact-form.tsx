@@ -28,6 +28,7 @@ const formSchema = z.object({
     message: "Subject must be at least 6 characters.",
   }),
   timeline: z.string(),
+  budget: z.string(),
   company: z.string().optional(),
   twitter: z.string().optional(),
   message: z
@@ -49,6 +50,7 @@ export function ContactForm() {
       email: "",
       subject: "",
       timeline: "",
+      budget: "",
       company: "",
       twitter: "",
       message: "",
@@ -134,9 +136,22 @@ export function ContactForm() {
             name="timeline"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Estimated timeline</FormLabel>
+                <FormLabel>Timeline</FormLabel>
                 <FormControl>
                   <Input placeholder="An estimated timeline" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="budget"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Budget</FormLabel>
+                <FormControl>
+                  <Input placeholder="An estimated budget" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
