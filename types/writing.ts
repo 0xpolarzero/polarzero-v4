@@ -2,7 +2,8 @@ import { ReactNode } from "react"
 
 export const categories = [
   "chainlink",
-  "security",
+  "security research",
+  "security reviews",
   "optimization",
   "decentralized socials",
   "nfts",

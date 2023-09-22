@@ -70,7 +70,7 @@ export const twitterPosts: TwitterPost[] = [
       "The CEI / FREI-PI patterns",
       "Rolling code for preconditions & postconditions"
     ),
-    categories: ["security"],
+    categories: ["security research"],
   },
   {
     type: "twitter",
@@ -106,7 +106,7 @@ export const twitterPosts: TwitterPost[] = [
     link: "https://twitter.com/0xpolarzero/status/1677996173297086464",
     pubDate: new Date("2023-07-09T11:00:38.032Z"),
     thumbnail: "/thumbnails/tweet_audit_reports.png",
-    categories: ["security"],
+    categories: ["security research"],
   },
   {
     type: "twitter",
