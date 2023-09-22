@@ -23,6 +23,18 @@ const getThumbnailFromTitle = (title: string, subtitle: string): Svg => {
 export const twitterPosts: TwitterPost[] = [
   {
     type: "twitter",
+    id: "1632035128674508801",
+    title: "Chainlink Functions (Alpha)",
+    subtitle: null,
+    description:
+      "A few thoughts after experimenting with Chainlink Functions during Alpha, and an integration example.",
+    link: "https://twitter.com/0xpolarzero/status/1632035128674508801",
+    pubDate: new Date("2023-03-04T15:07:51.079Z"),
+    thumbnail: "/thumbnails/tweet_chainlink_functions_alpha.png",
+    categories: ["chainlink"],
+  },
+  {
+    type: "twitter",
     id: "1682359325149261827",
     title: "Why you should use Chainlink as a developer",
     subtitle: null,
