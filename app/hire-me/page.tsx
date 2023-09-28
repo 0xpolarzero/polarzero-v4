@@ -11,8 +11,10 @@ export default function HireMePage() {
     <section className="container mx-auto flex flex-col space-y-4 p-4 px-8">
       <div className="flex flex-col space-y-4">
         <p className="max-w-[900px] text-justify text-base">
-          If you would like to integrate smart contracts into your project, or
-          if you need a security review/audit, reach out to me for a quote.
+          If you would like to integrate smart contracts into your project,{" "}
+          {/* or
+          if you need a security review/audit,  */}
+          reach out to me for a quote.
         </p>
         <p className="max-w-[900px] text-justify text-muted-foreground">
           Kindly share as much information as possible about your project
