@@ -38,7 +38,6 @@ export function FiltersSelector({
 }: FiltersSelectorProps) {
   const [open, setOpen] = React.useState<boolean>(false)
   const { width } = useWindowSize()
-  console.log(width)
 
   return (
     <div

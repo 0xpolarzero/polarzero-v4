@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { ExternalLink } from "lucide-react"
 
 import { Category, MediumArticle, TwitterPost } from "@/types/writing"
+import { mediumDescriptions } from "@/config/medium-descriptions"
 import { otherPosts } from "@/config/other-articles"
 import { twitterPosts } from "@/config/twitter-posts"
 import useMediumArticles from "@/hooks/use-medium-articles"
@@ -66,7 +67,11 @@ export default function BlogPage() {
           >
             <CardHeader>
               <CardTitle>{item.title}</CardTitle>
-              <CardDescription>{item.description}</CardDescription>
+              <CardDescription>
+                {item.type === "medium" && item.guid
+                  ? mediumDescriptions[item.guid]
+                  : item.description}
+              </CardDescription>
             </CardHeader>
             <CardContent className="flex h-full items-end gap-2">
               {item.categories.map((category) => (

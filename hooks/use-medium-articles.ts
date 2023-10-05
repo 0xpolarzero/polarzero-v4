@@ -15,6 +15,15 @@ interface MediumArticleProps {
   title: string
 }
 
+const transforms: Record<string, string> = {
+  "chain-link": "chainlink",
+  "security-research": "security research",
+}
+
+const formatCategories = (categories: string[]): string[] => {
+  return categories.map((category) => transforms[category] || category)
+}
+
 const useMediumArticles = (): [
   articles: MediumArticle[],
   fetchArticles: () => Promise<void>
@@ -27,6 +36,7 @@ const useMediumArticles = (): [
     )
 
     const data = await response.json()
+    console.log(data)
 
     setArticles(
       data.items.map((item: MediumArticleProps) => ({
@@ -35,7 +45,7 @@ const useMediumArticles = (): [
         id: data.items.indexOf(item).toString(),
         pubDate: new Date(item.pubDate),
         // Filter out categories that are not relevant
-        categories: item.categories.filter((category) =>
+        categories: formatCategories(item.categories).filter((category) =>
           categories.includes(category.toLowerCase())
         ),
         // Keep only the first paragraph of the description

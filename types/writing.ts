@@ -3,7 +3,6 @@ import { ReactNode } from "react"
 export const categories = [
   "chainlink",
   "security research",
-  "security reviews",
   "optimization",
   "decentralized socials",
   "nfts",
@@ -19,6 +18,7 @@ export type Category = (typeof categories)[number]
 export interface TwitterPost {
   type: Type
   id: string
+  guid?: string
   title: string
   subtitle: string | null
   description: string
@@ -32,6 +32,7 @@ export interface TwitterPost {
 export interface MediumArticle {
   type: Type
   id: string
+  guid?: string
   author: string
   title: string
   description: string | ReactNode
