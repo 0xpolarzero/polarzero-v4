@@ -9,11 +9,18 @@ export const categories = [
   "infrastructure",
   "metaverse",
   "immersive technologies",
+  "education",
+  "fr",
 ]
 
 type Type = "twitter" | "medium" | "hashnode" | "notion"
 
 export type Category = (typeof categories)[number]
+
+export type MediumInfo = {
+  description: (string | JSX.Element)[]
+  categories: string[]
+}
 
 export interface TwitterPost {
   type: Type

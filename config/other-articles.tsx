@@ -36,6 +36,6 @@ export const otherPosts: MediumArticle[] = [
     link: "https://memoire.polarzero.xyz",
     pdf: "https://drive.google.com/file/d/1r0_ZjVGLb32tfxoBmrERJypyCV6No36u/view?usp=sharing",
     pubDate: new Date("2022-07-07"),
-    categories: ["metaverse", "immersive technologies"],
+    categories: ["metaverse", "immersive technologies", "fr"],
   },
 ]

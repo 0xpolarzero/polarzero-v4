@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { ExternalLink } from "lucide-react"
 
 import { Category, MediumArticle, TwitterPost } from "@/types/writing"
-import { mediumDescriptions } from "@/config/medium-descriptions"
+import { mediumInfos } from "@/config/medium-info"
 import { otherPosts } from "@/config/other-articles"
 import { twitterPosts } from "@/config/twitter-posts"
 import useMediumArticles from "@/hooks/use-medium-articles"
@@ -45,7 +45,15 @@ export default function BlogPage() {
     )
 
     if (filter) {
-      setBlogItems(items.filter((item) => item.categories.includes(filter)))
+      setBlogItems(
+        items.filter(
+          (item) =>
+            item.categories.includes(filter) ||
+            (item.type === "medium" &&
+              item.guid &&
+              mediumInfos[item.guid].categories.includes(filter))
+        )
+      )
     } else {
       setBlogItems(items)
     }
@@ -69,14 +77,16 @@ export default function BlogPage() {
               <CardTitle>{item.title}</CardTitle>
               <CardDescription>
                 {item.type === "medium" && item.guid
-                  ? mediumDescriptions[item.guid]
+                  ? mediumInfos[item.guid].description.map((para, index) => (
+                      <p key={index}>{para}</p>
+                    ))
                   : item.description}
               </CardDescription>
             </CardHeader>
-            <CardContent className="flex h-full items-end gap-2">
+            <CardContent className="flex h-full flex-wrap items-end gap-2">
               {item.categories.map((category) => (
                 <Badge
-                  variant="secondary"
+                  variant={category === "education" ? "outline" : "secondary"}
                   className="cursor-pointer whitespace-nowrap"
                   key={category}
                   onClick={() => setFilter(category)}
@@ -84,6 +94,19 @@ export default function BlogPage() {
                   {category}
                 </Badge>
               ))}
+
+              {item.type === "medium" &&
+                item.guid &&
+                mediumInfos[item.guid].categories.map((category) => (
+                  <Badge
+                    variant={category === "education" ? "default" : "secondary"}
+                    className="cursor-pointer whitespace-nowrap"
+                    key={category}
+                    onClick={() => setFilter(category)}
+                  >
+                    {category}
+                  </Badge>
+                ))}
             </CardContent>
             <CardFooter className="flex flex-col items-start space-y-4">
               <p className="text-gray-500">
